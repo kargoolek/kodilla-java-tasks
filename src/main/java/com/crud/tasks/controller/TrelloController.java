@@ -26,7 +26,7 @@ public class TrelloController {
         trelloBoards.stream()
                 .filter(n -> n.getId() != null)
                 .filter(n -> n.getName() != null)
-               // .filter(n -> n.getName().contains("Kodilla"))
+                .filter(n -> n.getName().contains("Kodilla"))
                 .forEach(n -> System.out.println(n.getId() + " " + n.getName()));
     }
 }
