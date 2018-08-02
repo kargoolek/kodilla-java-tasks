@@ -8,9 +8,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @Component
 public class TrelloClient {
@@ -31,14 +29,19 @@ public class TrelloClient {
     private RestTemplate restTemplate;
 
     public List<TrelloBoardDto> getTrelloBoards() {
+        TrelloBoardDto[] t = restTemplate.getForObject(buildUrlAddress(), TrelloBoardDto[].class);
 
-
-        TrelloBoardDto[] boardsResponse = restTemplate.getForObject(buildUrlAddress(), TrelloBoardDto[].class);
-
-        if (boardsResponse != null) {
-            return Arrays.asList(boardsResponse);
+        //Simple test of use of Optional class:
+        Random r = new Random();
+        if(r.nextInt()%2 != 0) {
+            t = null;
         }
-        return new ArrayList<>();
+        //end of simple test
+
+        TrelloBoardDto[] boardsResponse = Optional.ofNullable(t)
+                .orElse(new TrelloBoardDto[]{new TrelloBoardDto("An error occured while processing request...", "[ERROR]")});
+
+        return Arrays.asList(boardsResponse);
     }
 
     private URI buildUrlAddress() {
