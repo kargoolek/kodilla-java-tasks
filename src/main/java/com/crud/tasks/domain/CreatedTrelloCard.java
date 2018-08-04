@@ -21,4 +21,46 @@ public class CreatedTrelloCard {
     @JsonProperty("shortUrl")
     private String shortUrl;
 
+    @JsonProperty("badges")
+    private Badges badges;
+
+}
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@JsonIgnoreProperties(ignoreUnknown = true)
+class Badges {
+
+    @JsonProperty("votes")
+    int votes;
+
+    @JsonProperty("attachmentsByType")
+    AttachmentsByTypeBadges attachments;
+
+}
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@JsonIgnoreProperties(ignoreUnknown = true)
+class AttachmentsByTypeBadges {
+
+    @JsonProperty("trello")
+    Trello trello;
+
+}
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@JsonIgnoreProperties(ignoreUnknown = true)
+class Trello {
+
+    @JsonProperty("board")
+    int board;
+
+    @JsonProperty("card")
+    int card;
+
 }
