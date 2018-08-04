@@ -12,14 +12,14 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TrelloBoardDto {
-
-    @JsonProperty("id")
-    private String id;
+public class TrelloListDto {
 
     @JsonProperty("name")
     private String name;
 
-    @JsonProperty("lists")
-    List<TrelloListDto> lists;
+    @JsonProperty("id")
+    private String id;
+
+    @JsonProperty("closed")
+    boolean isClosed;
 }
