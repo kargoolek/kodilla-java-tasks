@@ -6,6 +6,18 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
+public class TasksApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TasksApplication.class, args);
+	}
+
+}
+
+
+/* VERSION FOR LOCAL TOMCAT SERVER
+
+
 public class TasksApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
@@ -18,3 +30,4 @@ public class TasksApplication extends SpringBootServletInitializer {
 	}
 
 }
+*/
