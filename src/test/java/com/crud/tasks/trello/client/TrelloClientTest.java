@@ -66,7 +66,7 @@ public class TrelloClientTest {
         //Given
         TrelloCardDto trelloCardDto = new TrelloCardDto(
                 "Test task",
-                "Test description",
+                "Test Description",
                 "top",
                 "test_id"
         );
@@ -79,10 +79,9 @@ public class TrelloClientTest {
                 "http://test.com",
                 new Badges()
         );
-
-        //When
         when(restTemplate.postForObject(uri, null, CreatedTrelloCard.class)).thenReturn(createdTrelloCard);
 
+        //When
         CreatedTrelloCard newCard = trelloClient.createNewCard(trelloCardDto);
 
         //Then
