@@ -23,10 +23,11 @@ public class SimpleEmailServiceTest {
     @Test
     public void shouldSendEmail() {
         //Given
-        Mail mail = new Mail("kargoolek@tlen.pl", "Test", "Test Message");
+        Mail mail = new Mail("kargoolek@tlen.pl", "spring.java.mail.test@gmail.com","Test", "Test Message");
 
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(mail.getMailTo());
+        if(!mail.getToCc().isEmpty()) mailMessage.setCc(mail.getToCc());
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getMessage());
 
