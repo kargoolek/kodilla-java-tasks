@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
-/* HEROKU
+// HEROKU
 @SpringBootApplication
 public class TasksApplication {
 
@@ -14,9 +14,9 @@ public class TasksApplication {
 	}
 
 }
-*/
 
 
+/*LOCAL APP
 @SpringBootApplication
 public class TasksApplication extends SpringBootServletInitializer {
 
@@ -30,3 +30,4 @@ public class TasksApplication extends SpringBootServletInitializer {
 	}
 
 }
+*/
