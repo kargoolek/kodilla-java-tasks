@@ -13,7 +13,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
-//apply plugin: 'war' //commented out when on HEROKU
+apply plugin: 'war' //commented out when on HEROKU
 
 group = 'com.crud'
 version = '0.0.1-SNAPSHOT'
@@ -29,14 +29,16 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.projectlombok:lombok')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	//compile('mysql:mysql-connector-java') //commented out when on HEROKU
-	compile('org.postgresql:postgresql') //HEROKU
+	compile('mysql:mysql-connector-java') //commented out when on HEROKU
+	//compile('org.postgresql:postgresql') //HEROKU
 	compile('io.springfox:springfox-swagger2:2.9.2')
 	compile('io.springfox:springfox-swagger-ui:2.9.2')
 	compile('org.springframework.boot:spring-boot-starter-mail:2.0.4.RELEASE')
 	compile('com.google.code.gson:gson')
 	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	//providedRuntime("org.springframework.boot:spring-boot-starter-tomcat") //commented out when on HEROKU
+	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat") //commented out when on HEROKU
 }
