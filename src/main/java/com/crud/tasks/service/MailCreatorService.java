@@ -73,7 +73,7 @@ public class MailCreatorService {
 
         //Trello once per day mail
         context.setVariable("once_per_day_trello_boards", boardsNames);
-        context.setVariable("once_per_day_trello_link", "https://trello.com/"+trelloUserName+"/boards");
+        context.setVariable("once_per_day_trello_link","https://trello.com/"+trelloUserName+"/boards");
         context.setVariable("once_per_day_button_show", boardsNames.size() > 0);
         context.setVariable("once_per_day_button_text", "SHOW ALL BOARDS");
 

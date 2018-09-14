@@ -23,8 +23,8 @@ public class EmailScheduler {
     private AdminConfig adminConfig;
 
     @Scheduled(cron = "0 0 20 * * *", zone = "GMT+2")
-    @Scheduled(initialDelay = 10000)
-    //@Scheduled(fixedDelay = 10000)
+    //@Scheduled(initialDelay = 10000L)
+    //@Scheduled(fixedDelay = 360000L)
     public void sendInformationEmail() {
         long size = taskRepository.count();
         String tasks = (size == 1) ? " task." : " tasks.";
